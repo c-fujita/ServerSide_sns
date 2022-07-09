@@ -60,5 +60,9 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
+    },
+    "overrides": {
+        "portscanner": "2.2.0"
     }
+
 }
