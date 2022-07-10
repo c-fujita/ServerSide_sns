@@ -42,4 +42,25 @@ class PostsController extends Controller
 
         return redirect('/index');
     }
+
+    public function editForm($id)
+    {
+        $post = DB::table('posts')
+        ->where('id', $id)
+        ->first();
+        return view('posts.editForm', ['post' => $post]);
+    }
+
+    public function edit(Request $request)
+    {
+        $id = $request->input('id');
+        $up_name = $request->input('upUserName');
+        $up_post = $request->input('upPost');
+
+        DB::table('posts')
+        ->where('id', $id)
+        ->update(['user_name' => $up_name], ['contents' => $up_post]);
+
+        return redirect('/index');
+    }
 }

@@ -34,6 +34,8 @@
                 <td>{{ $list->user_name }}</td>
                 <td>{{ $list->contents }}</td>
                 <td>{{ $list->created_at }}</td>
+
+                <td><a class="btn btn-primary" href="/post/{{ $list->id }}/edit-form">編集</a></td>
             </tr>
             @endforeach
         </table>
