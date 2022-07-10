@@ -36,6 +36,7 @@
                 <td>{{ $list->created_at }}</td>
 
                 <td><a class="btn btn-primary" href="/post/{{ $list->id }}/edit-form">編集</a></td>
+                <td><a class="btn btn-danger" href="/post/{{ $list->id }}/delete" onclick="return confirm('この投稿を削除しますか？')">削除</a></td>
             </tr>
             @endforeach
         </table>

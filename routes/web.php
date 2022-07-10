@@ -32,3 +32,5 @@ Route::post('post/create', 'PostsController@create');
 Route::get('post/{id}/edit-form', 'PostsController@editForm');
 
 Route::post('post/edit', 'PostsController@edit');
+
+Route::get('post/{id}/delete', 'PostsController@delete');
