@@ -1,32 +1,31 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-</head>
-<body>
+@extends('layouts.app')
 
-    <header class="page-header">
-
-        <h1>みんなの掲示板</h1>
-
-    </header>
-
+@section('content')
     <div class="container">
 
-        <p><a class="btn btn-success" href="/create-form">投稿する</a></p>
+        <div class="form-cover">
+            <h2>みんなの投稿</h2>
 
-        <h2>みんなの投稿</h2>
+            {!! Form::open() !!}
+            <div class="form-group">
 
-        <table class="table table-hover">
+                {!! Form::input('text','search',null,['placeholder'=>'投稿内容を検索']) !!}
+                <button type="submit" class="btn btn-search"><i class="fas fa-thin fa-magnifying-glass"></i></button>
+
+            </div>
+        </div>
+
+        <p><a class="btn btn-add" href="/create-form"><i class="fas　fa-thin fa-circle-plus"></i>投稿する</a></p>
+
+        <table class="box2 box2-hover">
 
             <tr>
-                <th>投稿No</th>
-                <th>ユーザーネーム</th>
+                <th>No.</th>
+                <th>なまえ</th>
                 <th>投稿内容</th>
                 <th>投稿日時</th>
+                <th></th>
+                <th></th>
             </tr>
             @foreach($list as $list)
             <tr>
@@ -35,13 +34,15 @@
                 <td>{{ $list->contents }}</td>
                 <td>{{ $list->created_at }}</td>
 
-                <td><a class="btn btn-primary" href="/post/{{ $list->id }}/edit-form">編集</a></td>
-                <td><a class="btn btn-danger" href="/post/{{ $list->id }}/delete" onclick="return confirm('この投稿を削除しますか？')">削除</a></td>
+                <td><a class="btn btn-primary" href="/post/{{ $list->id }}/edit-form"><i class="fas fa-thin fa-pencil"></i></a></td>
+                <td><a class="btn btn-del" href="/post/{{ $list->id }}/delete" onclick="return confirm('この投稿を削除しますか？')"><i class="fas fa-thin fa-trash-can"></i></a></td>
             </tr>
             @endforeach
         </table>
     </div>
 
+    {!! Form::close() !!}
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-</body>
-</html>
+
+@endsection

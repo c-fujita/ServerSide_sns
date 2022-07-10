@@ -10125,10 +10125,205 @@ a.text-dark:focus {
     }
 }
 
+
+/* オリジナルデザイン */
+
+#app {
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/background1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    font-family: 'Yomogi', cursive;
+    font-size: 16px;
+    line-height: 30px;
+    max-width: 1024px;
+    padding: 15px;
+}
+
+.bg-blue {
+    background-color: #B0C4DE;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
 h1,
 .page-header {
     width: 970px;
-    padding: 0 15px;
+    padding: 20px;
     margin: 50px auto;
     text-align: center;
+    font-family: 'Amatic SC', cursive;
+    background-color: #c6e0f5;
+    display: block;
+    width: 80%;
+}
+
+h1 {
+    position: relative;
+    background: #dfefff;
+    box-shadow: 0px 0px 0px 5px #dfefff;
+    border: dashed 3px white;
+    padding: 0.2em 0.5em;
+    color: #454545;
+}
+
+h1:after {
+    position: absolute;
+    content: '';
+    left: -7px;
+    top: -7px;
+    border-width: 0 0 15px 15px;
+    border-style: solid;
+    border-color: #fff #fff #a8d4ff;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+    border-bottom: solid 3px #cce4ff;
+    position: relative;
+    max-width: 250px;
+    margin: 30px;
+}
+
+h2:after {
+    position: absolute;
+    content: " ";
+    display: block;
+    border-bottom: solid 3px #5472cd;
+    bottom: -3px;
+    width: 20%;
+}
+
+p {
+    text-align: right;
+}
+
+.box1 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #6091d3;
+    background: #FFF;
+    border: solid 3px #6091d3;
+    border-radius: 10px;
+}
+
+
+/* テーブル */
+
+.box2 {
+    padding: 10px;
+    margin: 50px 0;
+    background: #d6ebff;
+    box-shadow: 0px 0px 0px 20px #d6ebff;
+    border: dashed 8px white;
+    display: block;
+}
+
+.box2-hover tbody tr:hover {
+    color: #212529;
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+table.box2.box2-hover {
+    padding: 20px;
+}
+
+td {
+    border-top: 1px solid #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    text-align: center;
+    padding: 5px;
+}
+
+
+/* フォーム */
+
+.btn-del {
+    color: #fff;
+    background-color: #CC6699;
+    border-color: #CC6699;
+}
+
+form {
+    position: relative;
+}
+
+input {
+    white-space: normal;
+}
+
+form input {
+    padding: 7px;
+    border-radius: 1px;
+    border: 1px solid #284257;
+}
+
+form input:focus {
+    outline: 1px solid #6574cd;
+}
+
+input.form-control1 {
+    width: 900px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+input.form-control2 {
+    width: 900px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.btn-search {
+    color: #fff;
+    background-color: #3490dc;
+    border-color: #3490dc;
+    position: absolute;
+    padding: 8px;
+    border-radius: 0;
+}
+
+.btn-add {
+    color: #fff;
+    background-color: #20B2AA;
+    border-color: #20B2AA;
+}
+
+a.btn.btn-add {
+    padding: 10px 15px;
+}
+
+.fa-circle-plus {
+    margin-right: 10px;
+}
+
+.edit-icon {
+    margin-right: 10px;
+}
+
+a.btn.btn-primary {
+    padding: 10px 15px;
+}
+
+button.btn.btn-primary {
+    padding: 10px 15px;
+    margin-top: 15px;
+}
+
+a.btn.btn-del {
+    padding: 10px 15px;
+}
+
+.form-cover {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

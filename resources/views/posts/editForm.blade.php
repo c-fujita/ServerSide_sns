@@ -1,36 +1,24 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/app.css">
-</head>
-<body>
+@extends('layouts.app')
 
-    <header>
-        <h1 class="page-header">みんなの掲示板</h1>
-    </header>
-
+@section('content')
     <div class="container">
-        <h2>投稿内容を編集する</h2>
+        <h2>編集する？</h2>
 
         {!! Form::open(['url' => '/post/edit']) !!}
 
         <div class="form-group">
             {!! Form::hidden('id', $post->id) !!}
 
-            {!! Form::input('text','upUserName',$post->user_name,['required','class'=>'form-control']) !!}
-            {!! Form::input('text','upPost',$post->contents,['required','class'=>'form-control']) !!}
+            {!! Form::input('text','upUserName',$post->user_name,['required','class'=>'form-control form-control1']) !!}
+            {!! Form::input('text','upPost',$post->contents,['required','class'=>'form-control form-control2']) !!}
 
         </div>
 
-        <button type="submit" class="btn btn-success">編集</button>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-thin fa-pencil edit-icon"></i>編集する</button>
 
         {!! Form::close() !!}
     </div>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-</body>
-</html>
+@endsection
