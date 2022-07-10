@@ -21,4 +21,19 @@ class PostsController extends Controller
 
         return view('posts.index', ['list'=>$list]);
     }
+
+    public function createForm()
+    {
+        return view('posts.createForm');
+    }
+
+    public function create(Request $request)
+    {
+        $contents = $request->input('newPost');
+
+        DB::table('posts')->insert([
+            'contents' => $contents
+        ]);
+        return redirect('/index');
+    }
 }

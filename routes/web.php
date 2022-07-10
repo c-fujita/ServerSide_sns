@@ -24,3 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('index', 'PostsController@index');
 
 Route::get('auth/login', 'HomeController@login');
+
+Route::get('/create-form', 'PostsController@createForm');
+
+Route::post('post/create', 'PostsController@create');
