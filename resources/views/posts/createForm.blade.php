@@ -19,13 +19,14 @@
 
         <div class="form-group">
 
+            {!! Form::input('text','userName',null,['required','class'=>'form-control','placeholder'=>'ユーザーネーム']) !!}
             {!! Form::input('text','newPost',null,['required','class'=>'form-control','placeholder'=>'ここになにか書いてみよう！']) !!}
 
         </div>
 
         <button type="submit" class="btn btn-success">投稿する</button>
 
-        {!!Form::close() !!}
+        {!! Form::close() !!}
     </div>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
