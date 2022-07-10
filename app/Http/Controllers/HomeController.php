@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
 class HomeController extends Controller
 {
     /**
@@ -23,6 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $list = DB::table('posts')->get();
+
+        return view('posts.index', ['list'=>$list]);
+    }
+
+    public function login()
+    {
+        return view('auth.login');
     }
 }
