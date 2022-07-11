@@ -19,9 +19,9 @@ class Posts extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('user_name', 100);
+            $table->string('user_name');
 
-            $table->string('contents', 100);
+            $table->string('contents');
 
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 

@@ -31,6 +31,12 @@ class PostsController extends Controller
 
     public function create(Request $request)
     {
+
+        $request->validate([
+            'userName' => 'required|max:100',
+            'newPost' => 'required|max:100',
+        ]);
+
         $user_name = $request->input('userName');
         $contents = $request->input('newPost');
 
@@ -53,13 +59,19 @@ class PostsController extends Controller
 
     public function edit(Request $request)
     {
+
+        $request->validate([
+            'upUserName' => 'required|max:100',
+            'upPost' => 'required|max:100',
+        ]);
+
         $id = $request->input('id');
         $up_name = $request->input('upUserName');
         $up_post = $request->input('upPost');
 
         DB::table('posts')
         ->where('id', $id)
-        ->update(['user_name' => $up_name], ['contents' => $up_post]);
+        ->update(['user_name' => $up_name, 'contents' => $up_post]);
 
         return redirect('/index');
     }

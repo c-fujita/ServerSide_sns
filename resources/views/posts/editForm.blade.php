@@ -10,7 +10,17 @@
             {!! Form::hidden('id', $post->id) !!}
 
             {!! Form::input('text','upUserName',$post->user_name,['required','class'=>'form-control form-control1']) !!}
+                @if($errors->has('upUserName'))
+                    <ul>
+                        <li class="alert alert-danger">{{ $errors->first('upUserName')}}</li>
+                    </ul>
+                @endif
             {!! Form::input('text','upPost',$post->contents,['required','class'=>'form-control form-control2']) !!}
+                @if($errors->has('upPost'))
+                    <ul>
+                        <li class="alert alert-danger">{{ $errors->first('upPost')}}</li>
+                    </ul>
+                @endif
 
         </div>
 
