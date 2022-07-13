@@ -17,9 +17,17 @@ class PostsController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $list = DB::table('posts')->get();
+        $search = $request->input('search');
+
+        $query = Post::query();
+
+        if (!empty($search)) {
+            $query->where('contents', 'like', '%'.$search.'%');
+        }
+
+        $list = $query->orderBy('id', 'desc')->paginate(5);
 
         return view('posts.index', ['list'=>$list]);
     }
@@ -31,7 +39,6 @@ class PostsController extends Controller
 
     public function create(Request $request)
     {
-
         $request->validate([
             'userName' => 'required|max:100',
             'newPost' => 'required|max:100',
@@ -59,7 +66,6 @@ class PostsController extends Controller
 
     public function edit(Request $request)
     {
-
         $request->validate([
             'upUserName' => 'required|max:100',
             'upPost' => 'required|max:100',
@@ -76,11 +82,12 @@ class PostsController extends Controller
         return redirect('/index');
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
         DB::table('posts')
-        ->where('id',$id)
+        ->where('id', $id)
         ->delete();
 
         return redirect('/index');
-     }
+    }
 }
