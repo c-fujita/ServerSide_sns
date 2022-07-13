@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="main">
         <h2>編集する？</h2>
 
         {!! Form::open(['url' => '/post/edit']) !!}

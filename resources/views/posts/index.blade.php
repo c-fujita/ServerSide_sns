@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="main">
 
         <div class="form-cover">
             <h2>みんなの投稿</h2>

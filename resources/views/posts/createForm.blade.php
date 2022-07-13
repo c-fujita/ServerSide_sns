@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div class="container">
+    <div class="main">
         <h2>新しく投稿する</h2>
 
         {!! Form::open(['url' => 'post/create']) !!}

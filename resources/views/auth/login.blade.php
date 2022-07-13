@@ -62,8 +62,15 @@
                                         {{ __('パスワードをお忘れの方はこちら') }}
                                     </a>
                                 @endif
+
+
+                                <li class="nav-item">
+                                        <a class="register-link" href="{{ route('register') }}">{{ __('新規ユーザーの方はこちら') }}</a>
+                                </li>
+
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>
