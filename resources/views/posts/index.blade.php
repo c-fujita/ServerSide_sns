@@ -30,7 +30,7 @@
                 <th></th>
                 <th></th>
             </tr>
-            @foreach($list as $post)
+            @forelse($list as $post)
             <tr>
                 <td>{{ $post->id }}</td>
                 <td>{{ $post->user_name }}</td>
@@ -40,7 +40,14 @@
                 <td><a class="btn btn-primary" href="/post/{{ $post->id }}/edit-form"><i class="fas fa-thin fa-pencil"></i></a></td>
                 <td><a class="btn btn-del" href="/post/{{ $post->id }}/delete" onclick="return confirm('この投稿を削除しますか？')"><i class="fas fa-thin fa-trash-can"></i></a></td>
             </tr>
-            @endforeach
+            @empty
+                <td></td>
+                <td></td>
+                <td>検索したものは見つかりませんでした</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            @endforelse
         </table>
 
         {{ $list->links() }}
